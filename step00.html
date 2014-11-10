@@ -114,10 +114,9 @@
                 objThis.showImgAt(index);
             })
         }
-        
+
         //이미지 사이즈를 정하는 함수  
         ImageSlider.prototype.initContentsSize=function(){
-
             this.$imgContents.css({
                 width:this.imgWidth*this.imgLength
             })
@@ -172,25 +171,18 @@
                 this.timerID = 0;
             }
         }
-
-
-
 	</script>
 	
 </head>
-
-<body>		
-    
+<body>
     <div class="image-slider" id="slider1">
         <div class="image-container">                       
             <div class="image-contents">
                 <img src="./images/banner01.png" >
                 <img src="./images/banner02.png" >
                 <img src="./images/banner03.png" >
-                <img src="./images/banner04.png" >
-                
-                <img src="./images//banner05.png" > 
-                
+                <img src="./images/banner04.png" >                
+                <img src="./images//banner05.png" >                 
             </div>                                              
         </div>
          
@@ -233,8 +225,6 @@
         
         <div class="prev"></div>
         <div class="next"></div> 
-    </div>      
-    
+    </div>          
 </body> 
 </html>
-
