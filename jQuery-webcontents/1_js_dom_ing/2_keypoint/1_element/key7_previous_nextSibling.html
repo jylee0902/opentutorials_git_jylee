@@ -19,12 +19,13 @@
 		window.onload=function()
 		{
 			//  기준이되는 #content를 구한후.
-		
+			var content = document.getElementById('content');			
 			
-			// content노드에서 형제노드인 #header 접근하기.
-				
+			// content노드에서 형제노드인 #header 접근하기. => previousSibling은 바로 앞의 형제 노드 / nextSibling은 바로 뒤의 형제 노드를 구한다.
+			content.previousSibling.previousSibling.style.border = '2px solid #666333'
+			
 			// content노드에서 형제노드인 #footer 접근하기.
-						
+			content.nextSibling.nextSibling.style.border = '2px solid #222222'		
 		}
 	</script>
 </head>
