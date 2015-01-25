@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	
+	<style>
+		body
+		{
+			font-size: 9pt;
+		}
+		#info{
+			width:400px;
+			
+			border:1px solid #000000;
+			
+		}
+	</style>
+	<script type="text/javascript"  src="../libs/jquery-1.7.1.min.js"> </script>
+	<script>	
+		/*
+		 	jQuery DOM - 이벤트 핵심내용 1/4 
+		 		- 이벤트 추가(등록)하기
+		 		- 핵심 메서드 및 프로퍼티
+				 		- 단축 이벤트 방식 : .단축메소드이름(이벤트 리스너);
+				 		- 메소드를 이용하는 방식 : 
+				 			- .bind(이벤트 이름, 이벤트 리스너) : 이벤트 등록하는 가장 일반적인 방
+				 			- .one(이벤트 이름, 이벤트 리스너) : 이벤트가 실행 된 후 자동으로 삭제.(즉 오직 한번만 이벤트 리스터나 실행됨)
+				 			- .live(이벤트 이름, 이벤트 리스너) : bind()와 같지만, 현재 문서에 존재하지 않는요소, 즉, 앞으로 생성될 수 있는 요소에 미리 이벤트를 등록할때 사용. 
+		 */
+		 	
+		$(document).ready(function(){
+			/*
+			 	미션 1 : 단축 이벤트 방식으로 
+			 		- #btn_1에 click,mouseover이벤트를 등록해보세요.
+			 		- click이 되는 경우 #info에 "버튼이 click되었습니다."를 출력해주세요.
+			 		- mouseover가 되는 경우 #info에 "마우스가 over되었습니다."를 출력해주세요.
+ 			 	
+			*/			 
+			
+			
+			
+			
+			/*
+			 	미션 2 : bind()를 이용해서 
+			 		- #btn_2에 click,mouseover이벤트를 등록해보세요.
+			 		- click이 되는 경우 #info에 "버튼이 click되었습니다."를 출력해주세요.
+			 		- mouseover가 되는 경우 #info에 "마우스가 over되었습니다."를 출력해주세요.		 	
+			*/
+			
+		});
+		function on_Click(e){
+			info.innerHTML+="버튼이 click되었습니다.<br>"
+		}
+		
+		
+	</script>
+</head>
+	<body>
+		<button id="btn_1">DOM Level 0방식 테스트 - 마우스를 올려보가나 클릭해 보세요.</button><br>
+		<button id="btn_2">DOM Level 2방식 테스트 - 마우스를 올려보가나 클릭해 보세요.</button>
+		<div id="info">이곳에 이벤트 이벤트 정보가 출력됩니다.<br></div>
+	</body>
+</html>
+

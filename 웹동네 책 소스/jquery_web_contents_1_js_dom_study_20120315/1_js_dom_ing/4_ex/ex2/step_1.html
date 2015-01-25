@@ -1,0 +1,71 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<!--
+			Step #7-1
+				- 리팩토링 – 소스 정리 및 버그 수정
+				
+			Step #7
+				- 페이드 인, 페이드 아웃 효과 추가하기(10분)
+				
+			Step #6
+				- 핵심 이슈 1을 적용해 롤링 배너 구현하기(1시간)
+				
+			Step #5
+				- 4단계를 JSTweener를 이용해 변경해보기(2시간)
+				
+			Step #4-1
+				- 리팩토링 - 커다란 함수를 여러 개의 조각으로 나누기
+				
+	        Step #4
+	        	- 단계2, 3단계를 합해서 두 개를 동시에 움직이기(10분)
+	                
+			Step #3
+				- 배너 하나를 아래에서 출력 영역으로 움직여보기(10분)
+			            
+			Step #2
+				- 배너 하나를 위쪽으로 움직여보기(10분)
+		
+			Step #1
+				- 배너 구조 잡기(1시간)	
+	-->
+	
+	<style>
+		
+		#banner_container{
+			position:relative;
+			width:128px;		
+			height:128px;		
+			top:100px;
+			left:100px;		
+	
+			border:1px solid #cccccc;
+		}
+		
+		/* banner Item */
+		#banner_container div{
+			position:absolute;
+			width:128px;
+			height:128px;		
+			top:-128px;
+			background:#ffffff;
+			opacity:0.5;
+		}		
+	</style>
+</head>
+
+<body>
+	<div id="banner_container" >
+		<div>
+			<img src="images/img1.jpg">
+		</div>
+		<div>
+			<img src="images/img2.jpg">
+		</div>
+	</div>    
+</body>
+</html>
+
+
+

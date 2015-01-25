@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<script>
+	
+		/*
+		 	미션1 : GET방식으로 데이터 보내고 서버에서 비동기식으로 CSV 형식의 데이터 응답 받기 
+		 		
+		 		클라이언트 :
+		 			data1=ddandongne, data2=sample 두개의 데이터를 GET방식으로 서버에 보내주세요.
+		 			그리고 서버 응답은 비동기로 받아 주세요.
+		 			
+		 		서버 :
+		 			클라이언트에서 받은 data1, data2 데이터를 CSV 방식으로 그대로 보내주세요. 
+		 		
+		 		응답처리 :
+		 			서버에서 응답으로 받은 CSV 포맷 데이터를 파싱해서 각 데이터를 출력해주세요.
+		 				 
+		 */
+		var xmlHttp;
+		window.onload=function(){
+			// 1. 브라우저에 따른 XMLHttpRequest생성하기.
+			xmlHttp = createXMLHTTPObject();
+			
+			// 2. 요청에 대한 응답처리 이벤트 리스너 등록.
+			
+			
+			// 3.서버로 보낼 데이터 생성.
+		
+			
+			
+			// 4. GET방식으로 데이터 보내기, 응답은  비동기로 클라이언트<->서버간의 연결 요청준비.
+			
+			
+			// 5. 실제 데이터 전송.
+		
+			
+			// T. 동기/비동기 실행 테스트를 위한 부분.
+			alert("전송 시작!");
+		}
+		
+		// 1. 브라우저에 따른 XMLHttpRequest생성하기.
+		function createXMLHTTPObject(){
+			var	xhr = null;
+			if (window.XMLHttpRequest) {
+				// IE7버전 이상, Chrome, Safari, Firefox, opera등 거의 대부분의 브라우저에서는
+				// XMLHttpRequest객체를 제공합니다.
+				xhr = new XMLHttpRequest();
+			}
+			else {
+				// IE6,IE5 버전에서는 아래와 같이 XMLHttpRequest객체를 생성해야 합니다.
+				xhr = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+				
+			return xhr;
+		}
+		
+		// 6.응답처리.
+		
+		
+		//7. CSV포맷  데이터 처리.
+		
+	</script>
+</head>
+
+<body>
+</body>
+</html>
+
+

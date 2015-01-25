@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<script  type="text/javascript"  src="../libs/jquery-1.7.1.min.js"> </script>
+	<script>
+		/*
+			4장  jQuery Ajax -핵심 내용 3/8
+				- GET방식으로 데이터 보내고 서버에서 비동기식으로 CSV 형식의 데이터 응답 받기 
+				- 핵심 메서드 및 프로퍼티
+					- jQuery.ajaxSetup({키:값,키:값...}) 
+					- jQuery.get(url, 전송 데이터, 콜백함수);					
+			
+		*/
+		
+		
+		/*
+		 	미션1 : GET방식으로 데이터 보내고 서버에서 비동기식으로 CSV 형식의 데이터 응답 받기 
+		 		
+		 		클라이언트 :
+		 			data1=ddandongne, data2=sample 두개의 데이터를 GET방식으로 서버에 보내주세요.
+		 			그리고 서버 응답은 비동기로 받아 주세요.
+		 			
+		 		서버 :
+		 			클라이언트에서 받은 data1, data2 데이터를 CSV 방식으로 그대로 보내주세요. 
+		 		
+		 		응답처리 :
+		 			서버에서 응답으로 받은 CSV 포맷 데이터를 파싱해서 각 데이터를 출력해주세요.
+		 				 
+		 */
+		 
+		$(document).ready(function(){
+					
+			// 서버로 보낼 데이터 생성.
+            var param = {data1:"ddandongne", data2:"sample"};
+            /*
+                get(),getJSON(),post(),ajax()과 같은 jQuery Ajax 함수 내부에는 
+                다음과 같은 작업을 처리하는 루틴이 포함돼 있습니다.
+                    1. XMLHtpRequest 객체 생성
+                    2. 요청에 대한 응답 처리 이벤트 리스너 등록
+                    3. 서버로 보낼 데이터 데이터 생성
+                    4. 클라이언트와 서버 간의 연결 요청 준비(open() 메서드 이용).
+                        4-1. 서버로 보낼 데이터 전송 방식 설정(GET, POST 중 선택)
+                        4-2. 서버 응답 방식 설정(동기, 비동기 중 선택)
+                    5. 실제 데이터 전송(send() 메서드 이용)
+                    6. 응답 처리			 
+                모든 내용이 정상적으로 실행되면 success로 전달한 콜백 parseData() 함수가 실행됩니다.
+            */ 
+            // GET 방식으로, 실제 데이터 전송.
+            $.get("data.php",param, parseData);
+            alert("전송 시작!");
+
+		});		
+		//7. CSV 포맷의 데이터 처리
+		function parseData(strText){
+			alert("서버에서 받은 원본 데이터  : "+strText);
+			
+			var aryData = strText.split("|");
+			var objResult = {};
+			for(var i=0;i<aryData.length;i++){
+			    var keyValue = aryData[i].split("=");
+			    objResult[keyValue[0]] = keyValue[1];
+			}
+			alert("파싱한 데이터 : "+objResult);
+			//console.log("파싱한 데이터 : ",objResult);
+		}
+
+	</script>
+</head>
+
+<body>
+</body>
+</html>

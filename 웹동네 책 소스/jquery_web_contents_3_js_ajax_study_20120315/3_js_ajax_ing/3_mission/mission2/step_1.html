@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	
+	<style>
+		.image_panel{
+			border:1px solid #eeeeee;
+			text-align:center;
+			margin:5px;
+		}
+		.image_panel .title{
+			font-size:9pt;
+			color:#ff0000;
+		}
+		
+	</style>
+	</style>
+	<script  type="text/javascript"  src="../libs/jquery-1.7.1.min.js"></script>
+	
+	<script>
+		/*
+		 	미션 :
+		 		이미지 읽어들이기 버튼이 클릭되면 images.json 파일을 읽은 후 
+		 		 
+		 		이 안에 들어있는 <image> 노드 개수만큼  이미지 패널을 동적으로
+		 		#image_container 영역에 생성해주세요.
+		 		이미지 경로와 타이틀은 json의 정보를 사용해 만들어주세요. 
+		 		
+		 		실행  전)
+			 		<div id="image_container">
+						<!-- 1. 이곳에 이미지를 넣어주세요-->
+					</div>
+		 		
+		 		실행 후)
+		 			<div id="image_container">
+						<div class="image_panel">
+							<img src="images/1.png">
+							<p class="title">이미지1</p>
+						</div>
+						<div class="image_panel">
+							<img src="images/2.png">
+							<p class="title">이미지2</p>
+						</div>
+						....
+					</div>
+		 		
+		 		
+		*/
+		
+		
+		/*		 
+			 힌트 :
+				 	Step #5
+						- 3단계의 작업을 이미지 정보 개수만큼 반복	
+					Step #4
+						- 첫 번째 이미지 패널 생성
+						
+					Step #3
+						- 이미지 정보 개수 파악
+						
+					Step #2
+						- jQuery, Ajax개발 환경 설정
+						
+					Step #1
+						- XML 포맷을 JSON 포맷으로 변경
+		 
+		 */
+		
+		var xmlHttp;
+		window.onload=function(){
+			$("#btn_load").click(function(){
+				
+			});			
+		}
+		
+	
+	</script>
+</head>
+
+<body>
+	<div>
+		<button id="btn_load">이미지 읽어들이기</button>
+	</div>
+	<div id="image_container">
+		<!-- 1. 이곳에 이미지를 넣어주세요-->
+	</div>
+	
+	<!-- 2. 이 내용은 이미지 패널 템플릿입니다. -->
+	<div style="display:none;" id="image_panel_template">
+		<div class="image_panel">
+			<img >
+			<p class="title"></p>
+		</div>
+	</div>
+</body>
+</html>
+
+

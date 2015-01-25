@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		div{
+			border:1px #000000 solid;
+			margin:20px;
+			font-size:24px;
+		}
+	</style>
+	<script>
+		/*
+		 	스타일 핵심내용 2/3 
+		 		- 스타일 속성값 설정하기
+		 		- 핵심 메서드 및 프로퍼티 
+		 			- 인라인 스타일  : Element.style.속성이름  = 속성값 
+		 */
+		window.onload=function(){		
+			/*
+				미션 1 : #test_1의 스타일중
+								position를 absolute로
+								left를 100,
+								color를 #ff0000
+							으로 설정해주세요.
+											
+			*/	
+			var test1 = document.getElementById("test_1");
+			test1.style.position ="absolute";
+			test1.style.left ="100px";
+			test1.style.color = "#ff0000";
+		}
+	</script>
+	</head>
+<body>
+	<div id="test_1"> 
+		테스트1-1
+	</div>
+</body>
+</html>
