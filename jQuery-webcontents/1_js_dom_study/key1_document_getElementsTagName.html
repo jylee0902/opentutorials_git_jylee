@@ -27,12 +27,16 @@
 		 */
 		window.onload=function(){
 			// 미션1 : 문서에서 태그이름이 div인 노드를 찾아주세요.
-		
+			var div1 = document.getElementsByTagName("div");
 			
 			// 미션2 : 찾은 노드 개수를 출력하는 구문을 넣어 주세요.
-			
+			var divLen = div1.length;
 			
 			// 미션3 : 찾은 노드는 모두 border를 "4px solid #ff0000"으로 변경해주세요.
+			for( var i=0; i<divLen; i++ ) {
+				var div = div1.item(i);
+				div.style.border = '2px solid #ff0000';
+			}
 			
 		}
 	</script>
