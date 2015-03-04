@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		div{
+			border:1px #000000 solid;
+			margin:20px;
+			font-size:24px;
+		}
+	</style>
+	<script type="text/javascript"  src="../libs/jquery-1.7.1.min.js"> </script>
+	<script>
+		/*
+		 	jQuery DOM - 스타일 핵심내용 2/3 
+		 		- 스타일 속성값 설정하기
+		 		- 핵심 메서드 및 프로퍼티 
+		 			- .css("스타일 속성이름", "값");
+		 			- .css({"스타일 속성이름":"값", "스타일 속성이름":"값" . . .});
+		 */
+		$(document).ready(function(){
+			/*
+				미션 1 : #test_1의 스타일중
+								position를 absolute로
+								left를 100,
+								color를 #ff0000
+							으로 설정해주세요.
+											
+			*/	
+			//방법 1
+			$("#test_1").css("position", "absolute");
+			$("#test_1").css("left", "100px");
+			$("#test_1").css("color", "#ff0000");
+		
+			//방법 2
+			//$("#test_1").css({position:"absolute", left:"100px", color:"#ff0000"});
+		
+			//방법 3
+			//$("#test_1").css({position:"absolute", left:100, color:"#ff0000"});					
+		});
+	</script>
+</head>
+
+<body>
+	<div id="test_1" style="color:#ff0000"> 
+       	 	테스트1-1
+        </div>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	
+	<style>
+		*{
+			margin:0;
+			padding:0;
+		}
+		ul.menu{
+			
+			background-color:#cccccc;
+			width:700px;
+			height:60px;
+			position:absolute;
+			left:50px;
+			top:50px;
+			overflow:hidden;
+			padding-left:20px;
+		}
+		
+		ul.menu li{
+			margin-top:15px;
+			background-color:#ffffff;
+			overflow:hidden;
+			height:30px;	
+			float:left;		
+		}
+		
+		ul.menu li div{		
+			position:relative;
+		}			
+	</style>
+	
+	<script>
+		/*
+		 힌트 : 
+				 Step #4 
+					- Ajax 적용
+					
+					Step #4-2
+						- XML 파일 정보에 담긴 메뉴 정보를 참고해 동적으로 메뉴 아이템 생성
+						
+					Step #4-1
+						- Ajax 개발 환경 구축
+		
+				Step #3
+					-  메뉴 아이템 선택 처리.
+					
+					Step #3-3
+						- 메뉴 영역에서 마우스가 오버 또는 아웃될 때 선택 메뉴 아이템 처리
+			            - 메뉴 아이템 선택 처리 완료
+		
+					Step #3-2
+						- 선택된 메뉴 아이템에 선택 스타일 적용
+						
+					Step #3-1
+						- 마우스가 메뉴 영역을 나가는 경우 오버돼 있는 메뉴 아이템의 오버 스타일을 제거해  일반 메뉴 아이템 스타일로 만들기.
+						
+				Step #2
+					- 메뉴 아이템 오버 효과 구현
+					Step #2-6
+						-  리팩토링2
+							- over효과를 처리하는 부분을 setOverMenuItemStyle(), removeOverMenuItemStyle() 함수로 
+							분리해서 재사용성이 높도록 만듬.
+							
+					Step #2-5
+						- 리팩토링
+							- 계속해서 사용할 메뉴의 정보들 재사용하기 쉽도록 data에 넣어둡니다.
+							  initMenuData();
+							  
+							- 메뉴초기화에 관련된 내용도 따로 띠어내도록 하죠
+							 initEventListener();
+							 
+					Step #2-4
+						- 중복 적용된 오버 스타일 처리
+						
+					Step #2-3
+						- Step #2-2문제 해결
+							- animation.stop()추가.
+							
+					Step #2-2
+						- 오버 효과 구현.
+						- 문제점 
+							- 메뉴 아이템에서 마우스를 좌우로 빠르게 움직이게 되는 경우, 마우스의 움직임을 멈춘 상태에서도
+							 잔상처럼 계속해서 움직이는 증상이 나타남.
+							 
+					step #2-1
+						- 메뉴 아이템에 이벤트 리스너 등록
+				 
+				Step #1
+			       	- 메뉴 구조 잡기.
+		 */
+	</script>
+</head>
+
+<body>
+	<ul class="menu">
+		<li>
+			<div><img src="images/menu_1.png"></div>
+		</li>
+		<li>
+			<div><img src="images/menu_2.png"></div>
+		</li>
+		<li>
+			<div><img src="images/menu_3.png"></div>
+		</li>
+		<li>
+			<div><img src="images/menu_4.png"></div>
+		</li>
+		<li>
+			<div><img src="images/menu_5.png"></div>
+		</li>
+       </ul>
+</body>
+</html>

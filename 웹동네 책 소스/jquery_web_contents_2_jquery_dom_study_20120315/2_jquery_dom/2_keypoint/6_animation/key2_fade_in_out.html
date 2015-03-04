@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		#test_1{
+			border:1px #000000 solid;
+			width:200px;
+			height:120px;
+			
+			text-align:center;
+					
+		}
+		
+		
+	</style>
+	
+	
+	<script  type="text/javascript" src="../libs/jquery-1.7.1.min.js"></script>
+	<script  type="text/javascript"  src="../libs/jquery.easing.1.3.js"></script>
+	<script>
+		/*
+		 	jQuery DOM - 효과 핵심내용 2/6 
+		 		- 페이드인, 페이드아웃 효과 
+		 		- 핵심 메서드 및 프로퍼티
+		 				- 페이드인 : fadeIn()
+		 				- 페이드아웃 : fadeOut()
+		 				
+		*/
+		$(document).ready(function(){
+			/*
+			 	미션 1 : 
+			 		- #btn_show이 클릭되면 .fadeIn() 메서드를 이용해서 
+			 		   #img1을 서서히 등장하도록 해주세요.
+ 			 	
+ 			 	미션 2 :
+ 			 		- #btn_hide이 클릭되면 .fadeOut() 메서드를 이용해서
+ 			 		  #img1을 서서히 사라지도록 해주세요.
+			*/		
+			
+			//  움직일 대상 찾기.
+			var $img1 = $("#test_1");
+			$("#btn_show").bind("click", function(){
+				$img1.fadeIn(1000,"easeInCubic",function(){
+					alert("show 완료");
+				});
+			});
+			
+			$("#btn_hide").bind("click", function(){
+				$img1.fadeOut(1000,"easeOutCubic",function(){ 
+					alert("hide 완료");
+				});
+			});
+		});		
+	</script>
+
+</head>
+
+<body>
+	<div id="test_1"> 
+		<img id="img_1" src="ch2.png">
+	</div>       
+	
+	<div>
+		<button id="btn_show">fadeIn</button>
+		<button id="btn_hide">fadeOut</button>	
+	</div>
+</body>
+</html>

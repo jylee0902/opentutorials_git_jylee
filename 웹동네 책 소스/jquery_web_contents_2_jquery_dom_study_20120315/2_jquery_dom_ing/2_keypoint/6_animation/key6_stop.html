@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+		#test_1{
+			border:1px #000000 solid;
+			width:200px;
+			height:120px;
+			
+			text-align:center;
+					
+		}
+		
+		
+	</style>
+	
+	
+	<script  type="text/javascript" src="../libs/jquery-1.7.1.min.js"></script>
+	<script  type="text/javascript"  src="../libs/jquery.easing.1.3.js"></script>
+	<script>
+		/*
+		 	jQuery DOM - 효과 핵심내용 6/6 
+		 		- 애니메이션 중지하기.
+		 		- 핵심 메서드 및 프로퍼티
+		 				- .stop() 
+		 			
+		*/
+		$(document).ready(function(){
+			
+			/*
+			 	미션1 :
+			 		- #btn_show이 클릭되면 animate()을 이용해서 
+			 		    페이드인 효과를 구현해 주세요.
+			 		    단, 페이드인 효과가 실행되는 도중 #btn_hide가 클릭되면
+			 		    즉시, 페이드 아웃 효과가 실행되도록 해주세요.
+			 		    
+			 		    예)  
+			 		    		1. #btn_show  클릭해서 페이드 효과 시작. (opacity가 0-> 1로 변하기 시작)
+			 		    		2. opacity : 0.5일때 #btn_hide가 클릭되면 
+			 		    		3. opacity가 o.5 -> 1로 변해야 함.
+			 		    		
+			 	미션2 :
+			 		- #btn_hide이 클릭되면 animate()을 이용해서 
+			 		    페이드아웃 효과를 구현해 주세요.
+			 		    단, 페이드아웃 효과가 실행되는 도중 #btn_show가 클릭되면
+			 		    즉시, 페이드 인 효과가 실행되도록 해주세요.
+			 */
+			// 대상 찾기.
+			var $img1 = $("#img_1");
+			
+			// fadeIn
+			$("#btn_show").click(function(){
+				$img1.stop();
+				$img1.animate({opacity:1},3000,"easeOutCubic");
+			});
+			
+			// fadeOut
+			$("#btn_hide").click(function(){
+				$img1.stop();
+				$img1.animate({opacity:0},3000,"easeInCubic");
+			});
+		});		
+	</script>
+</head>
+
+<body>
+	<div id="test_1"> 
+		<img id="img_1" src="ch2.png">
+	</div>       
+	
+	<div>
+		<button id="btn_show">show</button>
+		<button id="btn_hide">hide</button>	
+	</div>
+</body>
+</html>

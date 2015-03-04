@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>window location properties</title>
+	<style>
+		body{
+			margin:0;
+			padding:0;
+		}
+		
+		#main{
+			border:1px dotted #ff0000;
+			width:500px;
+			margin:50px;
+		}
+		#rect{			
+			border:10px solid #ff0000;			
+			position:fixed;
+			left:120px;
+			top:100px;
+		}
+		
+	</style>
+       
+       <script>
+       /*
+		 	위치및 크기와 관련된 프로퍼티와 메서드 핵심내용 2/5 
+		 		- window 와 관련된 메서드 및 프로퍼티 
+		 			- innerWidth, innerHeight  : 메뉴바, 툴바, 스크롤바 크기를 제외한 window 너비와 높이 
+		 			
+		 			- outerWidth,outerHeight : 메뉴바, 툴바, 스크롤바 크기를 포함한 window 너비와 높이 
+		 			
+		 			- pageXOffset,pageYOffset : 스크롤된 x,y좌표
+		 			
+		 			- screenLeft,screenTop : 스크린에서 브라우저의 좌측 상단 모서리 x,y값 
+		 			- screenX,screenY
+		 			
+		 			- scrollTop(posX, posY) : posX,posY으로 스크롤 
+		 			- scrollBy(dx,dy) : 현재 스크롤 값에서 dx,dy만큼만 스크롤 
+		*/
+		var rect;
+		var main;
+		var nSW = 5;
+		window.onload=function(){
+			rect = document.getElementById("rect");
+			main = document.getElementById("main");
+			
+			showInfo();			
+			createData();
+			startAutoScroll();
+		}
+		
+		function createData(){
+			var strInfo="";
+			for(var i=0;i<100;i++){
+				strInfo += i+"<br>";
+			}
+			
+			main.innerHTML=strInfo;
+		}
+		
+		function showInfo(){
+			/*
+		   		미션 1 : 예제가 실행될 수 있도록 window의 크기및 위치와 관련된 속성값을
+		   		           모두 채워 주세요.
+		   		미션 2 : 예제를 직접 실행한 후 윈도우 크기를 변경해보세요.
+		   		미션 3 : 각 속성들이 어떤 차이가 있는지 꼬옥 확인 하세요.
+		  	*/
+			var strInfo="";
+			strInfo		="window.innerWidth = "+window.innerWidth+"<br>";
+			strInfo		+="window.innerHeigh = "+window.innerHeight+"<br>";
+			strInfo		+="window.outerWidth = "+window.outerWidth+"<br>";
+			strInfo		+="window.outerHeight = "+window.outerHeight+"<br>";
+			strInfo		+="window.pageXOffset = "+window.pageXOffset+"<br>";
+			strInfo		+="window.pageYOffset = "+window.pageYOffset+"<br>";
+			strInfo		+="window.screenLeft = "+window.screenLeft+"<br>";
+			strInfo		+="window.screenTop = "+window.screenTop+"<br>";
+			strInfo		+="window.screenX = "+window.screenX+"<br>";
+			strInfo		+="window.screenY = "+window.screenY+"<br>";
+			
+			rect.innerHTML = strInfo;
+		}
+		
+		
+		function startAutoScroll(){
+			setInterval(function(){
+				autoScroll();
+				showInfo();
+			}, 20);	
+		}
+
+
+		function autoScroll(){
+			var nY = window.pageYOffset;
+			var nMaxTop	= window.document.documentElement.scrollHeight-window.innerHeight;
+			
+			if(nY+nSW>nMaxTop){
+				nSW = -5;
+			}
+			
+			if(nY+nSW<0){
+				nSW = 5;
+			}
+			
+			nY += nSW;
+			window.scrollTo(0,nY);			
+		}
+	</script>
+</head>
+
+<body>
+	<div id="main">             
+	</div>
+	<div id="rect">                   
+	</div>
+</body>
+</html>

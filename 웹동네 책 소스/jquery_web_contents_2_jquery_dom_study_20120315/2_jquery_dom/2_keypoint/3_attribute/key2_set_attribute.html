@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD Xhtml 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title></title>
+	<style>
+	
+		.myClass
+		{
+			border:1px #000000 solid;
+			margin:20px;
+		}
+	</style>
+	<script type="text/javascript"  src="../libs/jquery-1.7.1.min.js"> </script>
+	<script>
+		/*
+		 		jQuery DOM - 속성 핵심내용 2/3 
+		 		- 속성값 변경 하기
+		 		- 핵심 메서드 및 프로퍼티 
+		 			- .attr("속성이름", "속성값");
+		 */
+		$(document).ready(function(){
+			/*
+				미션 1 : #test_1의 속성값중 
+								class="myClass"
+								data-value="new-data1"
+							으로 변경해 주세요.
+			*/	
+			// 방법1
+			var $test1 = $("#test_1");		
+			$test1.attr("class", "myClass");
+			$test1.attr("data-value", "new-data1");
+			
+			// 
+			// 방법2
+			//$test1.attr({"class":"myClass", "data-value":"new-data1"});
+		});
+	</script>
+</head>
+
+<body>
+	<div id="test_1" style="color:#ff0000;font-size:14px" data-role="data1"> 
+        	테스트1-1
+        </div>
+</body>
+</html>
